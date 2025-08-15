@@ -7,7 +7,7 @@ import Button from '../ui/Button/Button';
 
 const Hero = () => {
     const [open, setOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState('/bmw-video.mp4'); // дефолтное видео
+  const [videoSrc, setVideoSrc] = useState('/video.mp4'); // дефолтное видео
 
   useEffect(() => {
     fetch('https://imxauto.ru/graphql', {
@@ -63,7 +63,7 @@ const Hero = () => {
 
                         <div className={cls.imageCard}>
                             <video
-                                src="/bmw-video.mp4" // путь к твоему видео в public/videos/
+                                src={`${videoSrc}`} // путь к твоему видео в public/videos/
                                 autoPlay
                                 muted
                                 loop
