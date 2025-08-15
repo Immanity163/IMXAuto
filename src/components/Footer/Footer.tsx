@@ -101,13 +101,14 @@ export default function Footer() {
                 </div>
 
                 <div className={styles.bottom}>
-                    <p className={styles.dev}>Разработано студией «Сопряжение»</p>
-
-                    <div className={styles.copy}>
-                        © {year} IMX AUTO{" "}
-                        <Link href="/privacy" className={styles.privacy}>
-                            Политика конфиденциальности
-                        </Link>
+                    <div className={styles.copyBlock}>
+                        <div className={styles.copy}>
+                            © {year} IMX AUTO{" "}
+                            <Link href="/privacy" className={styles.privacy}>
+                                Политика конфиденциальности
+                            </Link>
+                        </div>
+                        <p className={styles.dev}>Разработано студией «Сопряжение»</p>
                     </div>
                 </div>
             </div>

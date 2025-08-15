@@ -154,3 +154,20 @@
     text-align: center;
   }
 }
+.copyBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; // выравнивание вправо
+}
+
+.bottom {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end; // всё вправо
+}
+
+@media screen and (max-width: 1380px) {
+  .copyBlock {
+    align-items: center; // на узких экранах по центру
+  }
+}
