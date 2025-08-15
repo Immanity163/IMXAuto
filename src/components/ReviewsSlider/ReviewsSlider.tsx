@@ -76,18 +76,24 @@ export default function ReviewsSlider() {
 
     const bindNavigation = () => {
       if (!prevRef.current || !nextRef.current) return;
+
       const params = swiper.params.navigation as NavigationOptions | boolean;
+
       if (params && typeof params !== "boolean") {
         params.prevEl = prevRef.current;
         params.nextEl = nextRef.current;
       }
-      swiper.navigation?.destroy();
-      swiper.navigation?.init();
-      swiper.navigation?.update();
+
+      if (swiper.navigation) {
+        swiper.navigation.destroy();
+        swiper.navigation.init();
+        swiper.navigation.update();
+      }
     };
 
     bindNavigation();
     const raf = requestAnimationFrame(bindNavigation);
+
     const handle = () => bindNavigation();
     swiper.on("breakpoint", handle);
     swiper.on("resize", handle);
@@ -102,13 +108,13 @@ export default function ReviewsSlider() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <h2 className={styles.title}>Отзывы покупателей</h2>
+        <h2 className="section-title">Отзывы покупателей</h2>
 
         <div className={styles.sliderWrapper}>
           <div className={styles.sliderViewport}>
             <Swiper
               modules={[Navigation]}
-              navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
+              navigation={{ prevEl: null, nextEl: null }}
               onSwiper={setSwiper}
               spaceBetween={20}
               slidesPerView={3}
@@ -121,21 +127,22 @@ export default function ReviewsSlider() {
               speed={400}
               className={styles.swiper}
             >
-              {reviews.map((review, index) => (
-                <SwiperSlide key={index} className={styles.slide}>
+              {reviews.map((review) => (
+                <SwiperSlide key={review.avatar} className={styles.slide}>
                   <article className={styles.card}>
                     <header className={styles.header}>
-                      <img
-                        src={review.avatar}
-                        alt={review.name}
-                        className={styles.avatar}
-                      />
+                      <img src={review.avatar} alt={review.name} className={styles.avatar} />
                       <div>
                         <h3 className={styles.name}>{review.name}</h3>
                         <div className={styles.rating}>{"★".repeat(5)} <span>5.0</span></div>
                       </div>
                     </header>
                     <p className={styles.text}>{review.text}</p>
+                    <div className={styles.photos}>
+                      {Array.from({ length: 4 }).map((_, i) => (
+                        <div key={i} className={styles.photoPlaceholder} />
+                      ))}
+                    </div>
                   </article>
                 </SwiperSlide>
               ))}

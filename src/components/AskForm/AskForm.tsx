@@ -4,6 +4,7 @@ import * as Checkbox from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
+import styles from './AskForm.module.scss';
 
 type SubmitData = { name: string; phone: string; question: string; agree: boolean };
 

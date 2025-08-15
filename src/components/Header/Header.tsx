@@ -7,37 +7,44 @@ import { PhoneCall } from "lucide-react";
 import Button from "../ui/Button/Button";
 import ModalLead from '@/components/ModalLead/ModalLead';
 import React, { useState, useEffect } from 'react';
-
-
+import BurgerButton from '@/components/Burger/BurgerButton';
+import BurgerMenu from '@/components/Burger/BurgerMenu';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
   const [phone, setPhone] = useState("");
 
   useEffect(() => {
-    fetch('https://imxauto.ru/graphql', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `
-          query Getoptions {
-            siteSettings {
-              nodes {
-                options {
-                  optionsPhone
+    async function fetchPhone() {
+      try {
+        const res = await fetch('https://imxauto.ru/graphql', {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query: `
+              query Getoptions {
+                siteSettings {
+                  nodes {
+                    options {
+                      optionsPhone
+                    }
+                  }
                 }
               }
-            }
-          }
-        `
-      })
-    })
-      .then(res => res.json())
-      .then(json => {
+            `
+          })
+        });
+
+        const json = await res.json();
         const phoneFromWp = json.data?.siteSettings?.nodes?.[0]?.options?.optionsPhone ?? "";
         setPhone(phoneFromWp);
-      })
+      } catch (err) {
+        console.error("Error fetching phone:", err);
+      }
+    }
+
+    fetchPhone();
   }, []);
 
   return (
@@ -51,7 +58,7 @@ export default function Header() {
 
             <div className={styles.phone}>
               <PhoneCall size={18} />
-              <span>{phone}</span>
+              <span>{phone || "+7 (900) 000-00-00"}</span>
             </div>
           </div>
 
@@ -62,6 +69,13 @@ export default function Header() {
               </svg>
             </button>
             <Button variant="primary" size="lg" onClick={() => setOpen(true)}>Оставить заявку</Button>
+            <div style={{ marginLeft: 'auto' }}>
+              <BurgerButton
+                isOpen={menuOpen}
+                onToggle={() => setMenuOpen((v) => !v)}
+                ariaLabel="Открыть меню"
+              />
+            </div>
           </div>
         </div>
 
@@ -79,6 +93,7 @@ export default function Header() {
       </div>
 
       <ModalLead open={open} onClose={() => setOpen(false)} />
+      <BurgerMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </header>
   );
 }

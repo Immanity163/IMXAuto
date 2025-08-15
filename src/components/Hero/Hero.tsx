@@ -55,15 +55,15 @@ const Hero = () => {
                                 <Button className={`${cls.btn} ${cls.btnPrimary}`} onClick={() => setOpen(true)}>
                                     Оставить заявку
                                 </Button>
-                                <a href="#steps" className={`${cls.btn} ${cls.btnSecondary}`}>
+                                <Button className={`${cls.btn} ${cls.btnSecondary}`}>
                                     Этапы работы
-                                </a>
+                                </Button>
                             </div>
                         </div>
 
                         <div className={cls.imageCard}>
                             <video
-                                src={videoSrc} // путь к твоему видео в public/videos/
+                                src="/bmw-video.mp4" // путь к твоему видео в public/videos/
                                 autoPlay
                                 muted
                                 loop

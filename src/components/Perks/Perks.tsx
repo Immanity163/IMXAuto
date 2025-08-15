@@ -7,7 +7,7 @@ const Perks = () => {
   return (
     <section className={cls.perks}>
       <div className="container">
-        <h2 className={cls.title}>Наши преимущества</h2>
+        <h2 className="section-title">Наши преимущества</h2>
 
         <div className={cls.row}>
           <div className={`${cls.card} ${cls.light}`}>

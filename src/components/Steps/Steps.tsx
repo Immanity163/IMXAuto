@@ -8,10 +8,9 @@ const Steps = () => {
     return (
         <section className={cls.stepsSection}>
             <div className="container">
-                <h2 className={cls.title}>Этапы работы с нами</h2>
+                <h2 className="section-title">Этапы работы с нами</h2>
 
                 <div className={cls.row}>
-                    {/* 01 */}
                     <div className={cls.card}>
                         <div className={cls.mediaTop}>
                             <Image
@@ -21,44 +20,42 @@ const Steps = () => {
                                 sizes="(min-width:1200px) 33vw, 100vw"
                                 style={{ objectFit: 'cover' }}
                             />
-                            <span className={cls.stepNum}>/01</span>
                         </div>
+                        <span className={cls.stepNum}>/01</span>
                         <div className={cls.body}>
                             <div className={cls.cardTitle}>Заключаем с вами договор</div>
                             <p className={cls.cardText}>
-                                На первом этапе мы оформляем договор, где прописаны все условия покупки.
-                                Это ваша гарантия безопасности и прозрачности на каждом этапе.
+                                На первом этапе мы оформляем договор, где прописаны все условия покупки. Это ваша гарантия безопасности и прозрачности на каждом этапе
                             </p>
                         </div>
                     </div>
 
-                    {/* 02 */}
                     <div className={`${cls.card} ${cls.cardSoft}`}>
-                        <span className={`${cls.stepNum} ${cls.numSoft}`}>/02</span>
-                        <div className={cls.iconLine}>
-                            <span className={cls.circle} />
-                            <span className={cls.circle} />
-                            <span className={cls.circle} />
+                        <div className={cls.mediaTop}>
+                            <Image
+                                src="/img/steps-2.png"
+                                alt=""
+                                fill
+                                style={{ objectFit: 'cover' }}
+                            />
                         </div>
+                        <span className={`${cls.stepNum} ${cls.numSoft}`}>/02</span>
                         <div className={cls.body}>
                             <div className={cls.cardTitle}>
                                 Подбираем автомобиль<br />под ваши задачи
                             </div>
                             <p className={cls.cardText}>
-                                Вы описываете бюджет, тип кузова, пробег и комплектацию. Мы подбираем лучшие
-                                варианты с аукционов Японии, Кореи или Китая.
+                                Вы описываете, что именно вам нужно — по бюджету, типу кузова, пробегу и комплектации. Мы подбираем лучшие предложения с аукционов Японии, Кореи или Китая
                             </p>
                         </div>
                     </div>
 
-                    {/* 03 */}
                     <div className={`${cls.card} ${cls.cardSoft}`}>
                         <span className={`${cls.stepNum} ${cls.numSoft}`}>/03</span>
                         <div className={cls.body}>
                             <div className={cls.cardTitle}>Проверяем авто и делаем полный отчёт</div>
                             <p className={cls.cardText}>
-                                Перед покупкой проводится диагностика и снимается подробный фото- и видеоотчёт.
-                                Вы видите автомобиль ещё до оплаты.
+                                Перед покупкой проводится техническая диагностика, а также снимается подробный фото- и видеоотчет. Вы видите автомобиль ещё до оплаты и принимаете решение уверенно
                             </p>
                         </div>
                         <div className={cls.mediaBottom}>
@@ -66,13 +63,11 @@ const Steps = () => {
                                 src="/img/steps-3.png"
                                 alt=""
                                 fill
-                                sizes="(min-width:1200px) 33vw, 100vw"
-                                style={{ objectFit: 'cover' }}
+                                style={{ objectFit: 'cover', objectPosition: 'center -95px' }}
                             />
                         </div>
                     </div>
 
-                    {/* 04 */}
                     <div className={`${cls.card} ${cls.cardDark} ${cls.cardOverlay}`}>
                         <Image
                             src="/img/steps-4.jpg"
@@ -91,7 +86,6 @@ const Steps = () => {
                         </div>
                     </div>
 
-                    {/* 05 */}
                     <div className={`${cls.card} ${cls.cardSoft} ${cls.cardSideMedia}`}>
                         <span className={`${cls.stepNum} ${cls.numSoft}`}>/05</span>
                         <div className={cls.body}>
@@ -106,13 +100,12 @@ const Steps = () => {
                                 src="/img/steps-5.jpg"
                                 alt=""
                                 fill
-                                sizes="140px"
+                                sizes="122px"
                                 style={{ objectFit: 'cover' }}
                             />
                         </div>
                     </div>
 
-                    {/* 06 */}
                     <div className={`${cls.card} ${cls.cardDark} ${cls.cardOverlay}`}>
                         <Image
                             src="/img/steps-6.png"
@@ -125,8 +118,7 @@ const Steps = () => {
                         <div className={cls.overlayContent}>
                             <div className={cls.cardTitleLight}>Доставка в ваш город</div>
                             <p className={cls.cardTextLight}>
-                                После выпуска с таможни передаём авто транспортной компании.
-                                Вы заранее знаете сроки и место прибытия.
+                                Сразу после выпуска с таможни мы передаём автомобиль в транспортную компанию. Он отправляется в ваш регион, и вы заранее знаете сроки и место прибытия
                             </p>
                         </div>
                     </div>
