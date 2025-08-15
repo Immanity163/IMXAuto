@@ -63,7 +63,7 @@ const Hero = () => {
 
                         <div className={cls.imageCard}>
                             <video
-                                src={`${videoSrc}`} // путь к твоему видео в public/videos/
+                                src="/video.mp4" // путь к твоему видео в public/videos/
                                 autoPlay
                                 muted
                                 loop
