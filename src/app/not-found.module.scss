@@ -1,0 +1,104 @@
+$teal: #04c7c7;
+$dark: #0f172a;
+
+.screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: clamp(16px, 3vw, 28px) 0;
+}
+
+.row {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left {
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.big {
+    font-family: var(--font-nunito), sans-serif;
+    font-size: 160px;
+    font-weight: 700;
+    line-height: 1;
+
+    @media screen and (max-width: 768px) {
+        font-size: 80px;
+        
+    }
+}
+
+.title {
+    font-family: var(--font-nunito), sans-serif;
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+
+    @media screen and (max-width: 768px) {
+        font-size: 28px;
+        
+    }
+}
+
+.text {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #334155;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.btnPrimary,
+.btnGhost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        opacity 0.15s ease;
+}
+.btnPrimary {
+    background: $teal;
+    color: #fff;
+}
+.btnGhost {
+    background: #101418;
+    color: #fff;
+}
+
+.right {
+    position: relative;
+    flex: 1 1 520px;
+    min-width: 380px;
+    height: clamp(220px, 38vw, 420px);
+}
+@media (max-width: 900px) {
+    .right {
+        min-width: 100%;
+        height: clamp(200px, 60vw, 360px);
+    }
+}

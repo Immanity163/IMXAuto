@@ -1,0 +1,93 @@
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+
+  @media screen and (max-width: 768px) {
+    gap: 10px;
+  }
+}
+.chip {
+  border: none;
+  background: #e9eef3;
+  color: #0f172a;
+  padding: 12px 18px;
+  border-radius: 36px;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+
+  @media screen and (max-width: 768px) {
+    padding: 12px 15px;
+    font-size: 15px;
+    gap: 6px;
+  }
+}
+.flag { font-size: 1.2rem; }
+.active { background: #1f2937; color: #fff; }
+
+.sliderWrapper { position: relative; }
+
+.sliderViewport {
+  --gutter-x: 12px;                
+  overflow-x: hidden;
+  overflow-y: visible;
+  padding: 0 var(--gutter-x);
+}
+
+.swiper {
+  overflow: visible;
+  margin: 0 calc(var(--gutter-x) * -1);  
+}
+.slide  { overflow: visible; }
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: none;
+  color: #000;
+  font-size: 4rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transform: translateY(-50%);
+}
+.prevBtn { left: 0;  transform: translate(calc(-100% - 45px), -50%); }
+.nextBtn { right: 0; transform: translate(calc(100% + 45px),  -50%); }
+
+@media (max-width: 640px) {
+  .prevBtn { left: 8px; transform: translate(0, -50%); }
+  .nextBtn { right: 8px; transform: translate(0, -50%); }
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: none;
+  color: #000;
+  font-size: 4rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transform: translateY(-50%);
+}
+
+.prevBtn { left: 0;  transform: translate(calc(-100% - 45px), -50%); }
+.nextBtn { right: 0; transform: translate(calc(100% + 45px),  -50%); }
+
+@media (max-width: 1380px) {
+  .navBtn { display: none; }
+}

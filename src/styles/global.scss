@@ -1,0 +1,57 @@
+@use "./base/settings" as *;
+@use "./base/mixins" as *;
+@use "./base/reset";
+@use "./base/typography";
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Lato";
+  src:
+    url("../../public/fonts/Lato-Regular.woff2") format("woff2"),
+    url("../../public/fonts/Lato-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  font-family: var(--font-nunito), sans-serif;
+}
+
+* {
+  font-family: "Lato";
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+.shell {
+  min-height: 100svh;          
+  display: flex;
+  flex-direction: column;
+}
+.main {
+  flex: 1;                      
+  display: flex;
+  flex-direction: column;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  margin-bottom: 70px;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-nunito), sans-serif;
+  margin-bottom: 17px;
+  font-weight: 700;
+  font-size: 34px;
+}

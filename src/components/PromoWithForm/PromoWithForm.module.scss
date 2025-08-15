@@ -1,0 +1,296 @@
+$teal: #00ced8;
+$dark: #0f172a;
+$darkCard: #252d37; // тёмный фон слева
+$light: #fff;
+$muted: #334155;
+
+.section {
+  /* внешние отступы задашь на странице при необходимости */
+}
+
+.wrap {
+  display: flex;
+  gap: 24px;
+  flex-wrap: nowrap; // держим в одну линию на десктопе
+}
+
+/* ===== Левый тёмный блок ===== */
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* для absolute-картинки */
+  background: $darkCard;
+  color: $light;
+  border-radius: 20px;
+  padding: 30px;
+  overflow: hidden;
+  min-width: 792px;
+
+  @media screen and (max-width: 1380px) {
+    padding: 25px;
+  }
+
+  @media screen and (max-width: 1380px) {
+    padding: 20px 15px;
+  }
+}
+
+.infoTitle {
+  font-family: var(--font-nunito), sans-serif;
+  margin: 0 0 10px;
+  font-size: 34px;
+  font-weight: 700;
+
+   @media screen and (max-width: 1380px) {
+    font-size: 26px;
+  }
+}
+
+.infoText {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: #fff;
+
+   @media screen and (max-width: 1380px) {
+    font-size: 13px;
+  }
+}
+
+.shortText {
+  margin-bottom: 0;
+  max-width: 456px;
+
+  @media screen and (max-width: 1380px) {
+    max-width: none;
+  }
+}
+
+.messengersLine {
+  margin-top: auto;
+  display: flex;
+  gap: 20px;
+
+  @media screen and (max-width: 1380px) {
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 1380px) {
+    margin-top: 20px;
+    margin-bottom: 120px;
+  }
+}
+
+.mesTitle {
+  font-size: 20px;
+  font-family: var(--font-nunito), sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.mesBtns {
+  display: flex;
+  gap: 12px;
+}
+
+.mesBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: $teal;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.carBox {
+  position: absolute;
+  right: 17px;
+  bottom: 0;
+  width: 349px;
+  height: 172px;
+  pointer-events: none;
+
+  @media screen and (max-width: 1380px) {
+    right: 0;
+  }
+
+  @media screen and (max-width: 1380px) {
+    width: 217px;
+    height: 107px;
+    right: 10px;
+  }
+}
+
+/* ===== Правая карточка формы ===== */
+.formCard {
+  min-width: 384px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  padding-top: 35px;
+  box-shadow: 0px 0px 20px 0px #e6e9ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.formTitle {
+  font-family: var(--font-nunito), sans-serif;
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.formSub {
+  margin: 0 0 17px;
+  font-size: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+
+}
+
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 0;
+
+    @media (max-width: 1380px) {
+    flex-direction: row;
+  }
+}
+
+.input {
+  width: 100%;
+  border: 0;
+  outline: none;
+  border-radius: 9px;
+  background: #e6e9ef;
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+.checkWrap {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+}
+
+.checkbox {
+  display: flex;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.checkboxChecked {
+  background: $teal;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0);
+}
+.checkboxError {
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 38, 38, 0.9),
+    0 0 0 6px rgba(220, 38, 38, 0.08);
+}
+
+.checkText {
+  font-size: 14px;
+  color: #0b1220;
+}
+.policyLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.errorNote {
+  font-size: 14px;
+  color: #b91c1c;
+  margin-top: -4px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 22px;
+  font-size: 15px;
+  background: $teal;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+/* ===== Успешная отправка ===== */
+.successWrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(4, 199, 199, 0.1);
+  border: 1px solid rgba(4, 199, 199, 0.35);
+  border-radius: 18px;
+  padding: 18px 20px;
+  margin-top: 8px;
+}
+
+.successIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: $teal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(4, 199, 199, 0.25);
+}
+
+.successText {
+  color: $dark;
+}
+.successTitle {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.successBtn {
+  margin-top: 8px;
+  border: 0;
+  border-radius: 14px;
+  padding: 10px 14px;
+  background: #fff;
+  color: $dark;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.12);
+  cursor: pointer;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1380px) {
+  .wrap {
+    flex-wrap: wrap;
+  } // разрешаем перенос
+  .infoCard {
+    min-width: 100%;
+  }
+  .formCard {
+    flex: 1 1 100%;
+    min-width: 0;
+    min-height: initial; // на узких — по контенту
+  }
+}

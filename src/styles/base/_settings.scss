@@ -1,0 +1,16 @@
+$primary-color: #00CED8;
+$color-text: #12161A;
+$color-gray: #A9ADB5;
+$container-max: 1200px;
+
+$section-y-sm: 2rem;   // ~32px
+$section-y-md: 3.5rem; // ~56px
+$section-y-lg: 5rem;   // ~80px
+
+/* брейкпоинты */
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);

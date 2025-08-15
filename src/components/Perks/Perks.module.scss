@@ -1,0 +1,72 @@
+$teal: #04c7c7;
+$dark: #0f172a;
+$dark2: #1a1f25;
+$lightGray: #e9eef3;
+
+$gap: 18px; 
+
+.perks { }
+
+.title {
+  margin: 0 0 18px;
+  font-weight: 800;
+  color: #0b1220;
+  font-size: clamp(28px, 4vw, 54px);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 calc((100% - 3 * $gap) / 4);
+  min-height: 138px;
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.06);
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.light  { background: $lightGray; color: #0b1220; }
+.teal   { background: $teal; color: #fff; }
+.dark   { background: #2b333b; color: #fff; }
+.black  { background: #101418; color: #fff; }
+
+.desc {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.35;
+  max-width: 95%;
+}
+.descLight { color: #fff; }
+
+.stat {
+  font-family: var(--font-nunito);
+  position: absolute;
+  right: 10px;
+  bottom: -38px; 
+  z-index: 0;
+  font-weight: 700;
+  color: #fff;
+  font-size: 100px;
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+/* Адаптив: 2 колонки на планшете, 1 на телефоне */
+@media (max-width: 1024px) {
+  .card { flex: 0 0 calc((100% - $gap) / 2); }
+}
+@media (max-width: 640px) {
+  .card { flex: 0 0 100%; }
+  .stat { font-size: clamp(64px, 26vw, 120px); }
+}

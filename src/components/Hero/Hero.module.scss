@@ -1,0 +1,205 @@
+/* palette */
+$teal: #04c7c7;
+$dark: #0f172a;
+$muted: #111827;
+$grayCard: #e6e9ef;
+
+.hero {
+    /* внешние отступы задавай на странице при необходимости */
+}
+
+.row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+/* Левая колонка */
+.left {
+    flex: 1 1 740px; /* растёт, основу берём широкую */
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lead {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    background: $grayCard;
+    border-radius: 24px;
+    padding: clamp(18px, 3vw, 32px);
+
+    @media screen and (max-width: 768px) {
+        padding: 20px;
+        height: auto;
+        max-height: none;
+    }
+}
+
+.title {
+    font-family: var(--font-nunito), sans-serif;
+    font-size: 2.5rem; /* 40px */
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 16px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    margin: 0 0 18px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: auto; /* кнопки внизу */
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        gap: 0;
+        justify-content: space-between;
+
+        button {
+            width: 49%;
+        }
+    }
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 20px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btnPrimary {
+    background: $teal;
+    color: #fff;
+}
+.btnSecondary {
+    background: #2a2f36;
+    color: #fff;
+}
+
+.imageCard {
+    position: relative;
+    width: 100%;
+    border-radius: 24px;
+    max-height: 280px;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        height: 345px;
+    }
+}
+
+/* Правая колонка */
+.right {
+    min-width: 282px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+}
+
+.stack {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1380px) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap: 15px;
+    }
+}
+
+.benefit {
+    height: 130px;
+    position: relative;
+    background: transparent;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: end;
+    gap: 16px;
+    border: 2px solid rgba(15, 23, 42, 0.06);
+
+    @media screen and (max-width: 1380px) {
+        width: 49%;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 15px;
+    }
+}
+
+.benefitText {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.benefitTitle {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: var(--font-nunito);
+
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+.benefitSub {
+    font-size: 0.9375rem;
+
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+.badge {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00ced8;
+
+    @media screen and (max-width: 768px) {
+        right: 10px;
+        top: 10px;
+    }
+}
+
+/* Адаптив */
+@media (max-width: 1380px) {
+    .right {
+        flex: 1 1 360px;
+    } /* разрешаем правой колонке переходить на следующую строку */
+}

@@ -1,0 +1,94 @@
+@use "../../styles/base/settings" as *;
+
+.header {
+  margin-bottom: 1.25rem;
+
+  @media screen and (max-width: 768px) {
+    button:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.2rem;
+  padding-bottom: 1rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $color-gray;
+  font-size: 0.875rem;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.whatsappBtn {
+  background: #1f2937;
+  border: none;
+  border-radius: 8px;
+  padding: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @media screen and (max-width: 1390px) {
+    display: none;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: #e6e9ef;
+
+  @media screen and (max-width: 1390px) {
+    display: none;
+  }
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.875rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+
+  a {
+    color: #111827;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #00cbe5;
+    }
+  }
+
+  @media screen and (max-width: 1390px) {
+    display: none;
+  }
+}

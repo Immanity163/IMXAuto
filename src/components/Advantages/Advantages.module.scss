@@ -1,0 +1,96 @@
+/* палитра */
+$teal: #04c7c7;
+$dark: #0f172a;
+$lightBg: #e9eef3;
+
+.title {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 300px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 16px;
+  background: $lightBg;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    flex: auto;
+  }
+}
+
+.cardPrimary {
+  background: $teal;
+  color: #fff;
+
+  .cardTitle {
+    color: #fff;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+  .cardSub {
+    color: rgba(255, 255, 255, 0.9);
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 57px;
+    height: 57px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardTitle {
+  font-weight: 800;
+  font-size: 18px;
+  color: $dark;
+}
+
+.cardSub {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #1e293b;
+}
+
+/* адаптив */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}

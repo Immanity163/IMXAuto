@@ -1,0 +1,191 @@
+$teal: #04c7c7;
+$dark: #0f172a;
+
+/* --- Burger button (морфинг в крестик) --- */
+.burgerBtn {
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: #101418;
+    color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    isolation: isolate;
+    z-index: 1111;
+    display: none;
+
+    @media (max-width: 1380px) {
+        display: block;
+    }
+}
+
+.line {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: #fff;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        top 0.2s ease,
+        bottom 0.2s ease;
+}
+.line:nth-child(1) {
+    top: 14px;
+}
+.line:nth-child(2) {
+    top: 21px;
+}
+.line:nth-child(3) {
+    bottom: 14px;
+}
+
+.burgerOpen .line:nth-child(1) {
+    top: 21px;
+    transform: rotate(45deg);
+}
+.burgerOpen .line:nth-child(2) {
+    opacity: 0;
+}
+.burgerOpen .line:nth-child(3) {
+    bottom: auto;
+    top: 21px;
+    transform: rotate(-45deg);
+}
+
+/* --- Modal overlay & sheet --- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 16px 24px; /* отступ сверху как на макете, кнопка остаётся на месте */
+}
+
+.sheet {
+    width: min(1100px, 100%);
+    background: #fff;
+    border-radius: 26px;
+    box-shadow: 0 30px 120px rgba(0, 0, 0, 0.35);
+}
+.sheetInner {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.col {
+    min-width: 260px;
+}
+.colRight {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+        gap: 8px;
+    }
+}
+
+.hint {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c6cbd5;
+    margin-bottom: 10px;
+}
+
+.nav {
+    font-family: var(--font-nunito), sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    a {
+        font-family: var(--font-nunito), sans-serif;
+        font-size: 20px;
+        color: #0b1220;
+        text-decoration: none;
+        font-weight: 700;
+        &:hover {
+            color: $teal;
+        }
+    }
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.phone {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 700;
+}
+.addr {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+}
+.social {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: $teal;
+    color: #fff;
+    font-weight: 800;
+}
+
+.modalButton{
+    width: 100%;
+    padding: 12px;
+    background-color: #00CED8;
+    border-radius: 9px;
+    font-size: 20px;
+    font-family: var(--font-nunito), sans-serif;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+/* мобилка */
+@media (max-width: 640px) {
+    .overlay {
+        padding-top: 70px;
+    }
+    .sheetInner {
+        padding: 18px;
+    }
+    .colRight {
+        flex: 1 1 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .hint {
+        font-size: 24px;
+    }
+}
