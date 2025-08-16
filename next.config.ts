@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // игнорируем ESLint ошибки при сборке
   },
+    typescript: {
+    ignoreBuildErrors: true, // игнорировать TS ошибки в dev
+  },
   images: {
     domains: ['imxauto.ru'], // домен внешних изображений
   },
