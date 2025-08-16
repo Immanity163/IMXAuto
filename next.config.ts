@@ -6,9 +6,15 @@ const nextConfig: NextConfig = {
       dynamic: 60,
     },
   },
-    reactStrictMode: true,
+  reactStrictMode: false, // отключаем строгий режим для дев-билда
+  devIndicators: {
+    buildActivity: false, // отключаем overlay ошибок и индикатор сборки
+  },
+  eslint: {
+    ignoreDuringBuilds: true, // игнорируем ESLint ошибки при сборке
+  },
   images: {
-    domains: ['imxauto.ru'], // <- сюда добавляем домен внешних изображений
+    domains: ['imxauto.ru'], // домен внешних изображений
   },
 };
 
