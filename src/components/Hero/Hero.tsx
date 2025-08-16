@@ -10,7 +10,7 @@ const Hero = () => {
   const [videoSrc, setVideoSrc] = useState('/video.mp4'); // дефолтное видео
 
   useEffect(() => {
-    fetch('https://imxauto.ru/graphql', {
+    fetch('http://91.197.99.124/graphql', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -62,18 +62,18 @@ const Hero = () => {
                         </div>
 
                         <div className={cls.imageCard}>
-                            <video
-                                src="/bmw-video.mp4" // путь к твоему видео в public/videos/
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                }}
-                            />
+                        <video
+                            src={videoSrc || '/bmw-video.mp4'} // либо видео из GraphQL, либо дефолтное
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            }}
+                        />
                         </div>
                     </div>
 

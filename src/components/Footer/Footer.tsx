@@ -14,7 +14,7 @@ export default function Footer() {
   const [TG, setTG] = useState("");
 
   useEffect(() => {
-    fetch('https://imxauto.ru/graphql', {
+    fetch('http://91.197.99.124/graphql', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
