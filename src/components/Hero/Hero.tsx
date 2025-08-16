@@ -7,7 +7,7 @@ import Button from '../ui/Button/Button';
 
 const Hero = () => {
     const [open, setOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState('/bmw-video.mp4'); // дефолтное видео
+  const [videoSrc, setVideoSrc] = useState(''); // дефолтное видео
 
   useEffect(() => {
     fetch('http://91.197.99.124/graphql', {
@@ -37,6 +37,7 @@ const Hero = () => {
         if (vidUrl) setVideoSrc(vidUrl);
       })
   }, []);
+  console.log(videoSrc)
     return (
         <section className={cls.hero}>
             <div className="container">
@@ -63,7 +64,7 @@ const Hero = () => {
 
                         <div className={cls.imageCard}>
                         <video
-                            src={videoSrc || '/bmw-video.mp4'} // либо видео из GraphQL, либо дефолтное
+                            src={videoSrc || '/video.MP4'} // либо видео из GraphQL, либо дефолтное
                             autoPlay
                             muted
                             loop
