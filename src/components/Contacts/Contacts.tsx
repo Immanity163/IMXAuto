@@ -84,7 +84,7 @@ const Contacts: React.FC<Props> = ({
                 </div>
               </div>
               <div className={cls.cardBody}>
-                <p className={cls.rowText}>{company.name}</p>
+                <p className={cls.rowText}>ИП ТОЛСТЫХ ВЛАДИМИР АЛЕКСАНДРОВИЧ</p>
                 <p className={cls.rowText}>ИНН {inn}</p>
                 <p className={cls.rowText}>КПП {kpp}</p>
               </div>
