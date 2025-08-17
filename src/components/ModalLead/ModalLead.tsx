@@ -17,7 +17,7 @@ const ModalLead: React.FC<Props> = ({ open, onClose }) => {
   // form state
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [agree, setAgree] = useState(true);            // как на скрине — по умолчанию активен
+  const [agree, setAgree] = useState(true);
   const [agreeError, setAgreeError] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
@@ -25,7 +25,44 @@ const ModalLead: React.FC<Props> = ({ open, onClose }) => {
   const checkboxRef = useRef<HTMLButtonElement | null>(null);
   const dialogRef = useRef<HTMLDivElement | null>(null);
 
+  // site settings from GraphQL
+  const [sitePhone, setSitePhone] = useState('');
+  const [siteAddress, setSiteAddress] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [telegram, setTelegram] = useState('');
+
   useEffect(() => setMounted(true), []);
+
+  useEffect(() => {
+    fetch('https://imxauto.ru/graphql', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `
+          query Getoptions {
+            siteSettings {
+              nodes {
+                options {
+                  optionsPhone
+                  optionsaddress
+                  whatsapp
+                  telegram
+                }
+              }
+            }
+          }
+        `
+      })
+    })
+      .then(res => res.json())
+      .then(json => {
+        const opts = json.data?.siteSettings?.nodes?.[0]?.options;
+        setSitePhone(opts?.optionsPhone ?? '');
+        setSiteAddress(opts?.optionsaddress ?? '');
+        setWhatsapp(opts?.whatsapp ?? '');
+        setTelegram(opts?.telegram ?? '');
+      });
+  }, []);
 
   // Esc + блокировка скролла
   useEffect(() => {
@@ -51,7 +88,7 @@ const ModalLead: React.FC<Props> = ({ open, onClose }) => {
     setAgreeError(false);
     try {
       setSubmitting(true);
-      // TODO: подставь реальный запрос
+      // TODO: заменить на реальный API-запрос
       await new Promise((r) => setTimeout(r, 700));
       setSent(true);
       setName('');
@@ -125,6 +162,16 @@ const ModalLead: React.FC<Props> = ({ open, onClose }) => {
                 {submitting ? 'Отправляем…' : 'Отправить'}
               </button>
             </form>
+
+            {/* 👇 выводим данные из GraphQL */}
+            <div className={cls.contacts}>
+              {sitePhone && <a href={`tel:${sitePhone.replace(/\s+/g, '')}`} className={cls.phone}>{sitePhone}</a>}
+              {siteAddress && <p className={cls.addr}>{siteAddress}</p>}
+              <div className={cls.messengers}>
+                {whatsapp && <a href={whatsapp} className={cls.msBtn}>WhatsApp</a>}
+                {telegram && <a href={telegram} className={cls.msBtn}>Telegram</a>}
+              </div>
+            </div>
           </div>
         ) : (
           <div className={`${cls.content} ${cls.successState}`}>
