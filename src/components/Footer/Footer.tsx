@@ -77,10 +77,10 @@ export default function Footer() {
 
                     <address className={styles.contacts}>
                         <h3 className={styles.colTitle}>Контакты</h3>
-                        <a className={styles.phone} href="tel:+79000000000">
-                            +7 (900) 000-00-00
+                        <a className={styles.phone} href={`tel:${phone.replace(/\s+/g, '')}`}>
+                            {phone}
                         </a>
-                        <p className={styles.addr}>г. Москва, ул. Мира, д. 000</p>
+                        <p className={styles.addr}>{address}</p>
                     </address>
 
                     <div className={styles.messengers}>
