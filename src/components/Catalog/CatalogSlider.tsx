@@ -72,7 +72,7 @@ query GetCars {
   title: car.title,
   price: Number(car.cars?.autoPrice || 0),
   engine: car.cars?.autoEngine || "",
-  power: car.cars?.autoPower || 0, 
+  power: car.cars?.autoPower || "", 
   mileage: car.cars?.automileage || 0,
   fuel: car.cars?.autoFuel || "",
   year: Number(car.cars?.autoYear || 0),
