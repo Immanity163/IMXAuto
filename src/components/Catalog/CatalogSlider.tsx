@@ -34,7 +34,7 @@ export default function CatalogSlider() {
     async function loadCars() {
       const query = `
 query GetCars {
-  cars {
+  cars(first: 1000) {
     nodes {
       id
       title
