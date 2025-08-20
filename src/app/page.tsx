@@ -54,7 +54,7 @@ export default function Home() {
 
       <ReviewsSlider />
 
-      <div className="container"><h2 className='section-title'>FAQ</h2></div>
+      <div id="faq" className="container"><h2 className='section-title'>FAQ</h2></div>
       <div className="container"><FAQ items={items} /></div>
 
       <AskBlock imageSrc="/img/askForm.png" />

@@ -1,0 +1,112 @@
+/* app/privacy/Privacy.module.scss */
+$text: #1f2937;
+$muted: #6b7280;
+$link: #2563eb;
+$border: #e5e7eb;
+$bg-soft: #f9fafb;
+
+.wrapper {
+    padding: 40px 16px;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        padding: 56px 24px;
+    }
+}
+
+/* ... остальное без изменений */
+
+.article {
+  color: $text;
+  margin: 0 auto;
+  line-height: 1.65;
+  font-size: 16px;
+
+  section {
+    margin-top: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 1.35;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 20px 0 8px;
+    font-weight: 600;
+    color: $muted;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  a {
+    color: $link;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  ol,
+  ul {
+    padding-left: 22px;
+    margin: 12px 0;
+  }
+
+  li + li {
+    margin-top: 6px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+
+/* Таблица целей обработки */
+.tableWrap {
+    width: 100%;
+    overflow-x: auto;
+    background: $bg-soft;
+    border: 1px solid $border;
+    border-radius: 8px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+    background: #fff;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 12px 14px;
+    border-bottom: 1px solid $border;
+    border-right: 1px solid $border;
+}
+
+.table th:last-child,
+.table td:last-child {
+    border-right: none;
+}
+
+.table thead th {
+    background: $bg-soft;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.table tbody td {
+    font-size: 14px;
+}
+
+/* Мелкие улучшения типографики */
+

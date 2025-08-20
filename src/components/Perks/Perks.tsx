@@ -5,7 +5,7 @@ import cls from './Perks.module.scss';
 
 const Perks = () => {
   return (
-    <section className={cls.perks}>
+    <section id='advantages' className={cls.perks}>
       <div className="container">
         <h2 className="section-title">Наши преимущества</h2>
 

@@ -6,7 +6,7 @@ import cls from './Steps.module.scss';
 
 const Steps = () => {
     return (
-        <section className={cls.stepsSection}>
+        <section id='steps' className={cls.stepsSection}>
             <div className="container">
                 <h2 className="section-title">Этапы работы с нами</h2>
 

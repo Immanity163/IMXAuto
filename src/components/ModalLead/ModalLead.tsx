@@ -163,15 +163,6 @@ const ModalLead: React.FC<Props> = ({ open, onClose }) => {
               </button>
             </form>
 
-            {/* 👇 выводим данные из GraphQL */}
-            <div className={cls.contacts}>
-              {sitePhone && <a href={`tel:${sitePhone.replace(/\s+/g, '')}`} className={cls.phone}>{sitePhone}</a>}
-              {siteAddress && <p className={cls.addr}>{siteAddress}</p>}
-              <div className={cls.messengers}>
-                {whatsapp && <a href={whatsapp} className={cls.msBtn}>WhatsApp</a>}
-                {telegram && <a href={telegram} className={cls.msBtn}>Telegram</a>}
-              </div>
-            </div>
           </div>
         ) : (
           <div className={`${cls.content} ${cls.successState}`}>

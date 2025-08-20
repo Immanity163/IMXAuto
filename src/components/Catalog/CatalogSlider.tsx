@@ -14,8 +14,8 @@ import CarCard, { Car } from "./CarCard";
 type Country = "china" | "korea" | "japan";
 
 const tabs: { key: Country; label: string; flag: string }[] = [
-  { key: "china", label: "Китай",  flag: "🇨🇳" },
-  { key: "korea", label: "Корея",  flag: "🇰🇷" },
+  { key: "china", label: "Китай", flag: "🇨🇳" },
+  { key: "korea", label: "Корея", flag: "🇰🇷" },
   { key: "japan", label: "Япония", flag: "🇯🇵" },
 ];
 
@@ -33,30 +33,30 @@ export default function CatalogSlider() {
   useEffect(() => {
     async function loadCars() {
       const query = `
-query GetCars {
-  cars(first: 1000) {
-    nodes {
-      id
-      title
-      cars {
-        autoEngine
-        autoFuel
-        autoImage {
-          node {
-            id
-            sourceUrl
+        query GetCars {
+          cars(first: 1000) {
+            nodes {
+              id
+              title
+              cars {
+                autoEngine
+                autoFuel
+                autoImage {
+                  node {
+                    id
+                    sourceUrl
+                  }
+                }
+                autoPrice
+                autoTitle
+                autoYear
+                autoCountry
+                autoPower
+                automileage
+              }
+            }
           }
         }
-        autoPrice
-        autoTitle
-        autoYear
-        autoCountry
-        autoPower
-        automileage
-      }
-    }
-  }
-}
       `;
 
       const res = await fetch("https://imxauto.ru/graphql", {
@@ -67,16 +67,16 @@ query GetCars {
       });
       const json = await res.json();
       const wpCars = json.data.cars.nodes.map((car: any) => ({
- id: car.id,
-  country: car.cars?.autoCountry,  
-  title: car.title,
-  price: Number(car.cars?.autoPrice || 0),
-  engine: car.cars?.autoEngine || "",
-  power: car.cars?.autoPower || "", 
-  mileage: car.cars?.automileage || 0,
-  fuel: car.cars?.autoFuel || "",
-  year: Number(car.cars?.autoYear || 0),
-  image: car.cars?.autoImage?.node?.sourceUrl || "" 
+        id: car.id,
+        country: car.cars?.autoCountry,
+        title: car.title,
+        price: Number(car.cars?.autoPrice || 0),
+        engine: car.cars?.autoEngine || "",
+        power: car.cars?.autoPower || "",
+        mileage: car.cars?.automileage || 0,
+        fuel: car.cars?.autoFuel || "",
+        year: Number(car.cars?.autoYear || 0),
+        image: car.cars?.autoImage?.node?.sourceUrl || ""
       }));
 
       setCars(wpCars);
@@ -117,7 +117,7 @@ query GetCars {
   }, [active, swiper]);
 
   return (
-    <section className={styles.section}>
+    <section id="catalog" className={styles.section}>
       <div className="container">
         <h2 className="section-title">Наш каталог</h2>
 
@@ -145,8 +145,8 @@ query GetCars {
               slidesPerGroup={1}
               spaceBetween={24}
               breakpoints={{
-                0:    { slidesPerView: 1, spaceBetween: 16 },
-                640:  { slidesPerView: 2, spaceBetween: 20 },
+                0: { slidesPerView: 1, spaceBetween: 16 },
+                640: { slidesPerView: 2, spaceBetween: 20 },
                 1024: { slidesPerView: 3, spaceBetween: 24 },
                 1280: { slidesPerView: 4, spaceBetween: 24 },
               }}

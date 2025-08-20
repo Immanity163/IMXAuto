@@ -1,6 +1,7 @@
 'use client';
 
 import cls from './Hero.module.scss';
+import Link from 'next/link';
 import ModalLead from '@/components/ModalLead/ModalLead';
 import React, { useState, useEffect } from 'react';
 import Button from '../ui/Button/Button';
@@ -56,9 +57,9 @@ const Hero = () => {
                                 <Button className={`${cls.btn} ${cls.btnPrimary}`} onClick={() => setOpen(true)}>
                                     Оставить заявку
                                 </Button>
-                                <Button className={`${cls.btn} ${cls.btnSecondary}`}>
+                                <Link href="#steps" className={`${cls.btn} ${cls.btnSecondary}`}>
                                     Этапы работы
-                                </Button>
+                                </Link>
                             </div>
                         </div>
 

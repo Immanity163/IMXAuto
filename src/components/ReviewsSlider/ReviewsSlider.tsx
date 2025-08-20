@@ -106,7 +106,7 @@ export default function ReviewsSlider() {
   }, [swiper]);
 
   return (
-    <section className={styles.section}>
+    <section id="reviews" className={styles.section}>
       <div className="container">
         <h2 className="section-title">Отзывы покупателей</h2>
 

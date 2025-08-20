@@ -71,7 +71,7 @@ const PromoWithForm: React.FC = () => {
     
 
   return (
-    <section className={cls.section}>
+    <section id='about' className={cls.section}>
       <div className="container">
         <div className={cls.wrap}>
           <div className={cls.infoCard}>

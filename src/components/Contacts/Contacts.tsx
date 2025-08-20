@@ -70,7 +70,7 @@ const Contacts: React.FC<Props> = ({
   }, []);
 
   return (
-    <section className={className}>
+    <section id='contacts' className={className}>
       <div className="container">
         <h2 className="section-title">Наши контакты</h2>
 
@@ -102,6 +102,13 @@ const Contacts: React.FC<Props> = ({
                   <PhoneIcon />
                   <a href={phoneHref} className={cls.linkText}>
                     {phoneLabel}
+                  </a>
+                </div>
+
+                <div className={cls.iconRow}>
+                  <MailIcon />
+                  <a href={`mailto:info@imxauto.ru`} className={cls.linkText}>
+                    info@imxauto.ru
                   </a>
                 </div>
 
@@ -179,4 +186,8 @@ const TelegramIcon = () => (
   <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M10.987 14.3404L10.5238 20.2036C11.1865 20.2036 11.4735 19.9474 11.8177 19.6397L14.9246 16.9675L21.3624 21.2105C22.5431 21.8027 23.3749 21.4909 23.6934 20.233L27.9192 2.41247L27.9204 2.41142C28.2949 0.840624 27.2892 0.226377 26.1388 0.611725L1.29991 9.17023C-0.395302 9.76243 -0.369635 10.6129 1.01173 10.9983L7.36205 12.7759L22.1126 4.46941C22.8068 4.05571 23.4379 4.28461 22.9188 4.6983L10.987 14.3404Z" fill="#FFFEFF" />
   </svg>
+);
+
+const MailIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#12161a" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
 );
