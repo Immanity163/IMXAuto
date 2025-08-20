@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import cls from './BurgerMenu.module.scss';
 import ModalLead from '@/components/ModalLead/ModalLead';
 
@@ -69,12 +70,12 @@ export default function BurgerMenu({ open, onClose }: Props) {
                     <div className={cls.col}>
                         <div className={cls.hint}>Меню</div>
                         <nav className={cls.nav}>
-                            <a href="/catalog">Каталог авто</a>
-                            <a href="/about">О компании</a>
-                            <a href="/perks">Преимущества</a>
-                            <a href="/steps">Этапы работы</a>
-                            <a href="/reviews">Отзывы</a>
-                            <a href="/contacts">Контакты</a>
+                            <Link href="/#catalog" onClick={onClose}>Каталог авто</Link>
+                            <Link href="/#about" onClick={onClose}>О компании</Link>
+                            <Link href="/#advantages" onClick={onClose}>Преимущества</Link>
+                            <Link href="/#steps" onClick={onClose}>Этапы работы</Link>
+                            <Link href="/#reviews" onClick={onClose}>Отзывы</Link>
+                            <Link href="/#contacts" onClick={onClose}>Контакты</Link>
                         </nav>
                     </div>
 

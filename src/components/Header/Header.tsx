@@ -82,13 +82,13 @@ export default function Header() {
         <div className={styles.divider}></div>
 
         <nav className={styles.nav}>
-          <Link href="#catalog">КАТАЛОГ АВТО</Link>
-          <Link href="#about">О КОМПАНИИ</Link>
-          <Link href="#advantages">ПРЕИМУЩЕСТВА</Link>
-          <Link href="#steps">ЭТАПЫ РАБОТЫ</Link>
-          <Link href="#reviews">ОТЗЫВЫ</Link>
-          <Link href="#faq">FAQ</Link>
-          <Link href="#contacts">КОНТАКТЫ</Link>
+          <Link href="/#catalog">КАТАЛОГ АВТО</Link>
+          <Link href="/#about">О КОМПАНИИ</Link>
+          <Link href="/#advantages">ПРЕИМУЩЕСТВА</Link>
+          <Link href="/#steps">ЭТАПЫ РАБОТЫ</Link>
+          <Link href="/#reviews">ОТЗЫВЫ</Link>
+          <Link href="/#faq">FAQ</Link>
+          <Link href="/#contacts">КОНТАКТЫ</Link>
         </nav>
       </div>
 
