@@ -38,8 +38,8 @@ export default function Footer() {
       .then(json => {
         setPhone(json.data?.siteSettings?.nodes?.[0]?.options?.optionsPhone ?? "");
         setAddress(json.data?.siteSettings?.nodes?.[0]?.options?.optionsaddress ?? "")
-        setWA(json.data?.siteSettings?.nodes?.[0]?.options?.optionsWhatsapp ?? "")
-        setTG(json.data?.siteSettings?.nodes?.[0]?.options?.optionsTelegram ?? "")
+        setWA(json.data?.siteSettings?.nodes?.[0]?.options?.whatsapp ?? "")
+        setTG(json.data?.siteSettings?.nodes?.[0]?.options?.telegram ?? "")
       })
   }, []);
 

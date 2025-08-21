@@ -40,7 +40,7 @@ export default function ReviewsSlider() {
         }
         reviewPhoto1{
           					node{
-            sourceUrl
+                      sourceUrl
           }
         }
       }
