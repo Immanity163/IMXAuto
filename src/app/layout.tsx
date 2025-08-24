@@ -3,6 +3,7 @@ import Footer from "@/components/Footer/Footer";
 import type { Metadata } from "next";
 import { Nunito_Sans} from "next/font/google";;
 import '@/styles/global.scss' 
+import Script from "next/script";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin", "cyrillic"], // чтобы работала кириллица
@@ -66,6 +67,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="main">{children}</main>
         <Footer />
+                {/* Яндекс.Метрика */}
+        <Script
+          id="yandex-metrika"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(m,e,t,r,i,k,a){
+                  m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                  m[i].l=1*new Date();
+                  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+              })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=103804972", "ym");
+
+              ym(103804972, "init", {
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true,
+                  webvisor:true
+              });
+            `,
+          }}
+        />
+        <noscript>
+          <div>
+            <img src="https://mc.yandex.ru/watch/103804972" style={{ position: "absolute", left: "-9999px" }} alt="" />
+          </div>
+        </noscript>
+        {/* /Яндекс.Метрика */}
       </body>
     </html>
   )
