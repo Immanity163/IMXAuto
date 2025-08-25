@@ -82,7 +82,7 @@ export default function BurgerMenu({ open, onClose }: Props) {
                     <div className={cls.col}>
                         <div className={cls.hint}>Контакты</div>
                         <div className={cls.contacts}>
-                            <a href="{`tel:${sitePhone.replace(/\s+/g, '')}`}" className={cls.phone}>{sitePhone}</a>
+                            <a href={`tel:${sitePhone.replace(/\s+/g, '')}`} className={cls.phone}>{sitePhone}</a>
                             <div className={cls.addr}>{siteAddress}</div>
                         </div>
                     </div>

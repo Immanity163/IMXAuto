@@ -63,6 +63,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className={nunitoSans.variable}>
+      <head>
+        <meta name="yandex-verification" content="1aaa6a5c3c5ece14" />
+      </head>
       <body className="shell">
         <Header />
         <main className="main">{children}</main>
