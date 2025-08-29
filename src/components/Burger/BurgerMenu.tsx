@@ -4,53 +4,19 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import cls from './BurgerMenu.module.scss';
 import ModalLead from '@/components/ModalLead/ModalLead';
-
+import { useSiteOptions } from "@/api/options";
 
 type Props = {
     open: boolean;
     onClose: () => void;
 };
 
+
+
 export default function BurgerMenu({ open, onClose }: Props) {
     const [openModal, setOpenModal] = useState(false);
+    const { phone, address, whatsapp, telegram } = useSiteOptions();
 
-     // site settings from GraphQL
-      const [sitePhone, setSitePhone] = useState('');
-      const [siteAddress, setSiteAddress] = useState('');
-      const [whatsapp, setWhatsapp] = useState('');
-      const [telegram, setTelegram] = useState('');
-    
-    
-      useEffect(() => {
-        fetch('https://imxauto.ru/graphql', {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            query: `
-              query Getoptions {
-                siteSettings {
-                  nodes {
-                    options {
-                      optionsPhone
-                      optionsaddress
-                      whatsapp
-                      telegram
-                    }
-                  }
-                }
-              }
-            `
-          })
-        })
-          .then(res => res.json())
-          .then(json => {
-            const opts = json.data?.siteSettings?.nodes?.[0]?.options;
-            setSitePhone(opts?.optionsPhone ?? '');
-            setSiteAddress(opts?.optionsaddress ?? '');
-            setWhatsapp(opts?.whatsapp ?? '');
-            setTelegram(opts?.telegram ?? '');
-          });
-      }, []);
 
     useEffect(() => {
         if (!open) return;
@@ -82,8 +48,8 @@ export default function BurgerMenu({ open, onClose }: Props) {
                     <div className={cls.col}>
                         <div className={cls.hint}>Контакты</div>
                         <div className={cls.contacts}>
-                            <a href={`tel:${sitePhone.replace(/\s+/g, '')}`} className={cls.phone}>{sitePhone}</a>
-                            <div className={cls.addr}>{siteAddress}</div>
+                            <a href={`tel:${phone.replace(/\s+/g, '')}`} className={cls.phone}>{phone}</a>
+                            <div className={cls.addr}>{address}</div>
                         </div>
                     </div>
 

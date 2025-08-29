@@ -6,46 +6,16 @@ import Image from "next/image";
 import { PhoneCall } from "lucide-react";
 import Button from "../ui/Button/Button";
 import ModalLead from '@/components/ModalLead/ModalLead';
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import BurgerButton from '@/components/Burger/BurgerButton';
 import BurgerMenu from '@/components/Burger/BurgerMenu';
+import { useSiteOptions } from "@/api/options";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [phone, setPhone] = useState("");
+  const { phone } = useSiteOptions();
 
-  useEffect(() => {
-    async function fetchPhone() {
-      try {
-        const res = await fetch('https://imxauto.ru/graphql', {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            query: `
-              query Getoptions {
-                siteSettings {
-                  nodes {
-                    options {
-                      optionsPhone
-                    }
-                  }
-                }
-              }
-            `
-          })
-        });
-
-        const json = await res.json();
-        const phoneFromWp = json.data?.siteSettings?.nodes?.[0]?.options?.optionsPhone ?? "";
-        setPhone(phoneFromWp);
-      } catch (err) {
-        console.error("Error fetching phone:", err);
-      }
-    }
-
-    fetchPhone();
-  }, []);
 
   return (
     <header className={styles.header}>

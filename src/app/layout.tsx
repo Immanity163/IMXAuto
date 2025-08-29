@@ -12,12 +12,6 @@ const nunitoSans = Nunito_Sans({
 });
 
 
-
-// export const metadata: Metadata = {
-//   title: "IMX AUTO | Главная",
-//   description: "Покупка авто из-за рубежа",
-// };
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://imxauto.ru"), 
   title: {
@@ -36,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "IMX AUTO",
     images: [
       {
-        url: "/og-image.jpg", // заранее положи картинку в public/
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "IMX AUTO",
@@ -44,7 +38,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://imxauto.ru", // канонический адрес
+    canonical: "https://imxauto.ru",
   },
   robots: {
     index: true,
@@ -70,7 +64,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="main">{children}</main>
         <Footer />
-                {/* Яндекс.Метрика */}
         <Script
           id="yandex-metrika"
           strategy="afterInteractive"
@@ -96,7 +89,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <img src="https://mc.yandex.ru/watch/103804972" style={{ position: "absolute", left: "-9999px" }} alt="" />
           </div>
         </noscript>
-        {/* /Яндекс.Метрика */}
       </body>
     </html>
   )

@@ -29,12 +29,11 @@ export default function CatalogSlider() {
   const nextRef = useRef<HTMLButtonElement>(null);
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
-  // Запрос к WPGraphQL
   useEffect(() => {
     async function loadCars() {
       const query = `
         query GetCars {
-          cars(first: 1000) {
+          cars(first: 40) {
             nodes {
               id
               title

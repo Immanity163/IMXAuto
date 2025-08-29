@@ -25,44 +25,7 @@ const ModalLead: React.FC<Props> = ({ open, onClose }) => {
   const checkboxRef = useRef<HTMLButtonElement | null>(null);
   const dialogRef = useRef<HTMLDivElement | null>(null);
 
-  // site settings from GraphQL
-  const [sitePhone, setSitePhone] = useState('');
-  const [siteAddress, setSiteAddress] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [telegram, setTelegram] = useState('');
-
   useEffect(() => setMounted(true), []);
-
-  useEffect(() => {
-    fetch('https://imxauto.ru/graphql', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: `
-          query Getoptions {
-            siteSettings {
-              nodes {
-                options {
-                  optionsPhone
-                  optionsaddress
-                  whatsapp
-                  telegram
-                }
-              }
-            }
-          }
-        `
-      })
-    })
-      .then(res => res.json())
-      .then(json => {
-        const opts = json.data?.siteSettings?.nodes?.[0]?.options;
-        setSitePhone(opts?.optionsPhone ?? '');
-        setSiteAddress(opts?.optionsaddress ?? '');
-        setWhatsapp(opts?.whatsapp ?? '');
-        setTelegram(opts?.telegram ?? '');
-      });
-  }, []);
 
   // Esc + блокировка скролла
   useEffect(() => {

@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
 import cls from './Contacts.module.scss';
+import { useSiteOptions } from "@/api/options";
 
 type Props = {
   className?: string;
@@ -18,56 +18,8 @@ const Contacts: React.FC<Props> = ({
   },
   mapSlot,
 }) => {
-  const [phoneLabel, setPhoneLabel] = useState('+7 (900) 000-00-00');
-  const [phoneHref, setPhoneHref] = useState('tel:+79000000000');
-  const [address, setAddress] = useState('г. Москва, ул. Мира, д. 000');
-  const [whatsappHref, setWhatsappHref] = useState('#');
-  const [telegramHref, setTelegramHref] = useState('#');
-  const [inn, setInn] = useState('1111111111');
-  const [kpp, setKpp] = useState('111111111');
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch('https://imxauto.ru/graphql', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            query: `
-              query GetOptions {
-                siteSettings {
-                  nodes {
-                    options {
-                      optionsPhone
-                      optionsaddress
-                      whatsapp
-                      telegram
-                      optionsinn
-                      optionskpp
-                    }
-                  }
-                }
-              }
-            `,
-          }),
-        });
-        const json = await res.json();
-        const opts = json.data?.siteSettings?.nodes?.[0]?.options;
-        if (opts) {
-          setPhoneLabel(opts.optionsPhone ?? phoneLabel);
-          setPhoneHref(`tel:${opts.optionsPhone ?? ''}`);
-          setAddress(opts.optionsaddress ?? address);
-          setWhatsappHref(opts.whatsapp ?? '#');
-          setTelegramHref(opts.telegram ?? '#');
-          setInn(opts.optionsinn ?? inn);
-          setKpp(opts.optionskpp ?? kpp);
-        }
-      } catch (e) {
-        console.error('Failed to fetch contacts:', e);
-      }
-    }
-    fetchData();
-  }, []);
+const { phone, address, whatsapp, telegram,inn,kpp } = useSiteOptions();
 
   return (
     <section id='contacts' className={className}>
@@ -100,8 +52,8 @@ const Contacts: React.FC<Props> = ({
               <div className={cls.cardBody}>
                 <div className={cls.iconRow}>
                   <PhoneIcon />
-                  <a href={phoneHref} className={cls.linkText}>
-                    {phoneLabel}
+                  <a href={`tel:${phone.replace(/\s+/g, '')}`} className={cls.linkText}>
+                    {phone}
                   </a>
                 </div>
 
@@ -118,13 +70,13 @@ const Contacts: React.FC<Props> = ({
                 </div>
 
                 <div className={cls.messengers}>
-                  {whatsappHref && (
-                    <a className={cls.messengerBtn} href={whatsappHref} aria-label="WhatsApp">
+                  {whatsapp && (
+                    <a className={cls.messengerBtn} href={whatsapp} aria-label="WhatsApp">
                       <WhatsappIcon />
                     </a>
                   )}
-                  {telegramHref && (
-                    <a className={cls.messengerBtn} href={telegramHref} aria-label="Telegram">
+                  {telegram && (
+                    <a className={cls.messengerBtn} href={telegram} aria-label="Telegram">
                       <TelegramIcon />
                     </a>
                   )}
