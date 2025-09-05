@@ -47,8 +47,8 @@ export function useCars(limit: number = 40, filters: CarFilters = {}) {
         if (filters.country) metaArray.push(`{ key: "autoCountry", value: "${filters.country}", compare: EQUAL_TO, type: CHAR }`);
         if (filters.brand) metaArray.push(`{ key: "brand", value: "${filters.brand}", compare: EQUAL_TO, type: CHAR }`);
         if (filters.model) metaArray.push(`{ key: "automodel", value: "${filters.model}", compare: EQUAL_TO, type: CHAR }`);
-        if (filters.generation) metaArray.push(`{ key: "autoGeneration", value: "${filters.generation}", compare: EQUAL_TO, type: CHAR }`);
-        if (filters.drive) metaArray.push(`{ key: "autoDrive", value: "${filters.drive}", compare: EQUAL_TO, type: CHAR }`);
+        if (filters.generation) metaArray.push(`{ key: "autogeneration", value: "${filters.generation}", compare: EQUAL_TO, type: CHAR }`);
+        if (filters.drive) metaArray.push(`{ key: "autodrive", value: "${filters.drive}", compare: EQUAL_TO, type: CHAR }`);
         if (filters.fuel) metaArray.push(`{ key: "autoFuel", value: "${filters.fuel}", compare: EQUAL_TO, type: CHAR }`);
 
         if (filters.priceMin !== undefined) metaArray.push(`{ key: "autoPrice", value: "${filters.priceMin}", compare: GREATER_THAN_OR_EQUAL_TO, type: NUMERIC }`);
@@ -76,9 +76,9 @@ export function useCars(limit: number = 40, filters: CarFilters = {}) {
                   autoCountry
                   autoPower
                   automileage
-                  autoDrive
+                  autodrive
                   automodel
-                  autoGeneration
+                  autogeneration
                   brand
                 }
               }
@@ -105,10 +105,10 @@ export function useCars(limit: number = 40, filters: CarFilters = {}) {
           fuel: car.cars?.autoFuel || "",
           year: Number(car.cars?.autoYear || 0),
           image: car.cars?.autoImage?.node?.sourceUrl || "",
-          drive: car.cars?.autoDrive || "",
+          drive: car.cars?.autodrive || "",
           brand: car.cars?.brand || "",
           model: car.cars?.automodel || "",
-          generation: car.cars?.autoGeneration || "",
+          generation: car.cars?.autogeneration || "",
         }));
 
         setCars(wpCars);
