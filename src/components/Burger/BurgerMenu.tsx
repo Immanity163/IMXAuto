@@ -36,7 +36,7 @@ export default function BurgerMenu({ open, onClose }: Props) {
                     <div className={cls.col}>
                         <div className={cls.hint}>Меню</div>
                         <nav className={cls.nav}>
-                            <Link href="/#catalog" onClick={onClose}>Каталог авто</Link>
+                            <Link href="/catalog" onClick={onClose}>Каталог авто</Link>
                             <Link href="/#about" onClick={onClose}>О компании</Link>
                             <Link href="/#advantages" onClick={onClose}>Преимущества</Link>
                             <Link href="/#steps" onClick={onClose}>Этапы работы</Link>

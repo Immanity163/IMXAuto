@@ -1,0 +1,188 @@
+/* Панель */
+.wrap {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 0px #E6E9EFB2;
+  border-radius: 15px;
+  padding: 15px 12px;
+  width: 282px;      /* десктоп */
+  color: #111827;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* Планшет и телефон — всегда на 100% ширины контейнера */
+@media (max-width: 1390px) {
+  .wrap { width: 100%; }
+}
+
+/* Заголовок "Фильтр" */
+.h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+/* Секции */
+.group {
+  display: block;
+  padding: 15px 0;
+  border-top: 1px solid #E6E9EF;
+}
+.group:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* заголовок секции */
+.sectionHeader {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+.chevron {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23252D37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform .2s ease;
+}
+.chevronOpen {
+  transform: rotate(180deg);
+}
+.content {
+  margin-top: 12px;
+}
+
+/* Чипсы */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #E6E9EF;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  color: #111827;
+  transition: background .2s ease, color .2s ease;
+}
+.chipActive {
+  background: #252D37;
+  color: #fff;
+}
+
+/* Инпуты и селекты */
+.input,
+.select {
+  width: 100%;
+  background: #E6E9EF;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font: inherit;
+  color: #111827;
+  outline: none;
+}
+
+/* стрелка в select */
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234B4D4E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  padding-right: 36px;
+}
+
+/* Два поля в ряд */
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.row2 > .input:first-child,
+.row2 > .select:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 1px solid #C8CDD5;
+}
+.row2 > .input:last-child,
+.row2 > .select:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Подвал */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btnPrimary {
+  background: #00CED8;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btnGhost {
+  background: #252D37;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- АДАПТАЦИЯ ---------- */
+
+/* планшет */
+@media (max-width: 1024px) {
+  .wrap {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+/* телефон */
+@media (max-width: 640px) {
+  .wrap {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

@@ -66,7 +66,7 @@ export default function Footer() {
                     <nav className={styles.menu} aria-label="Основное меню в футере">
                         <h3 className={styles.colTitle}>Меню</h3>
                         <ul className={styles.menuList}>
-                            <li><Link href="/#catalog">Каталог авто</Link></li>
+                            <li><Link href="/catalog">Каталог авто</Link></li>
                             <li><Link href="/#about">О компании</Link></li>
                             <li><Link href="/#advantages">Преимущества</Link></li>
                             <li><Link href="/#steps">Этапы работы</Link></li>

@@ -1,0 +1,81 @@
+/* Основной контейнер страницы */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 0; /* вертикальные отступы, как было */
+}
+
+.siteway {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: Nunito Sans;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 34px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  margin-bottom: 15px;
+}
+
+/* Сетка: список авто + фильтр (справа) */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 282px; /* контент | сайдбар-фильтр */
+  grid-template-areas: "content sidebar";
+  gap: 20px; /* по ТЗ */
+}
+
+/* Явно обозначим области для удобного переупорядочивания */
+.content {
+  grid-area: content;
+  min-width: 0;
+}
+.sidebar {
+  grid-area: sidebar;
+  width: 282px;
+}
+
+/* ===== Планшет: 1390px → 641px ===== */
+@media (max-width: 1390px) {
+  .container {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px; /* горизонтальные паддинги контейнера */
+  }
+
+  .layout {
+    grid-template-columns: 1fr; /* одна колонка */
+    grid-template-areas:
+      "sidebar" /* фильтр — первым */
+      "content"; /* список — следом */
+    row-gap: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+  } /* фильтр на всю ширину контейнера */
+}
+
+/* ===== Телефон: ≤ 640px ===== */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px; /* меньше горизонтальные паддинги */
+  }
+
+  .layout {
+    grid-template-columns: 1fr; /* одна колонка */
+    grid-template-areas:
+      "sidebar"
+      "content";
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}

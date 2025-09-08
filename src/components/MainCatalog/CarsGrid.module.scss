@@ -1,0 +1,33 @@
+.grid {
+  display: grid;
+  /* Стремимся к трём колонкам, карточка может расти */
+  grid-template-columns: repeat(3, minmax(282px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+/* Блок формы должен занимать всю ширину сетки */
+.fullWidth {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.empty {
+  padding: 24px 0;
+  color: #6b7280;
+}
+
+/* ===== Планшет/контент уже — держим 3 колонки, пока помещается ===== */
+@media (max-width: 1100px) {
+  .grid {
+    /* становится тесно — плавно переходим на 2 колонки */
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+/* ===== Мобильный ===== */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr; /* одна карточка в ряд */
+  }
+}

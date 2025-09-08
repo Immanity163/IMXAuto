@@ -1,0 +1,46 @@
+.wrap {
+  display: flex;
+  justify-content: center; /* центрируем под лэйаутом */
+  padding: 24px 0;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* расстояние как на макете */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  min-width: 34px;            /* визуально как плашки на макете */
+  height: 34px;
+  border-radius: 9px;
+  background: #e6e9ef;
+  border: 0;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.page:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+.active {
+  background: #252d37;
+  color: #fff;
+}
+
+.dots {
+  color: #0f172a;
+  opacity: .7;
+  font-size: 32px;
+  user-select: none;
+}

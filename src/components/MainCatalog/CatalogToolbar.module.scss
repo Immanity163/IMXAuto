@@ -1,0 +1,65 @@
+.bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0 16px;
+}
+
+.count {
+  font-size: 20px;
+  font-weight: 700;
+  color: #9ca3af; /* как на макете — светло-серый */
+}
+
+/* обёртка сортировки */
+.sortWrap {
+  display: inline-flex;
+}
+
+/* селект под макет (та же стрелка, что в фильтре) */
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: #ffffff;
+  border: 0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f172a;
+  outline: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23252D37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+/* планшет */
+@media (max-width: 1390px) {
+  .count { font-size: 24px; }
+  .select { font-size: 16px; }
+}
+
+/* телефон */
+@media (max-width: 640px) {
+  .bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .count { font-size: 22px; }
+  .select { font-size: 16px; width: 100%; }
+}
+
+/* screen-reader only utility (чтоб не тянуть общий reset) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
