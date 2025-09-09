@@ -31,6 +31,9 @@ export interface Car {
   autocompletionfull: string[];
   autoouter?: string;
   autoinner?: string;
+  linkinspection?: string;
+  linkinsurance?: string;
+  linkcontract?: string;
 }
 
 export function useCar(id: string) {
@@ -77,6 +80,9 @@ export function useCar(id: string) {
                     autocompletionfull
                     autoouter { node { sourceUrl } }
                     autoinner { node { sourceUrl } }
+                    linkinspection
+                    linkinsurance
+                    linkcontract
                   }
                 }
               }
@@ -123,6 +129,9 @@ export function useCar(id: string) {
             .filter((s: string) => s.length > 0),
           autoouter: c.autoouter?.node?.sourceUrl ?? "",
           autoinner: c.autoinner?.node?.sourceUrl ?? "",
+          linkinspection:  c.linkinspection ?? "",
+          linkinsurance: c.linkinsurance ?? "",
+          linkcontract: c.linkcontract ?? "",
         });
       } catch (err) {
         console.error("Ошибка при загрузке машины:", err);
