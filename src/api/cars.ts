@@ -24,6 +24,8 @@ interface CarFilters {
   brand?: string;
   model?: string;
   generation?: string;
+  mileageMin?: number;
+  mileageMax?: number;
   priceMin?: number;
   priceMax?: number;
   engineMin?: number;
@@ -57,6 +59,8 @@ export function useCars(limit: number = 40, filters: CarFilters = {}) {
         if (filters.engineMax !== undefined) metaArray.push(`{ key: "autoEngine", value: "${filters.engineMax}", compare: LESS_THAN_OR_EQUAL_TO, type: NUMERIC }`);
         if (filters.yearMin !== undefined) metaArray.push(`{ key: "autoYear", value: "${filters.yearMin}", compare: GREATER_THAN_OR_EQUAL_TO, type: NUMERIC }`);
         if (filters.yearMax !== undefined) metaArray.push(`{ key: "autoYear", value: "${filters.yearMax}", compare: LESS_THAN_OR_EQUAL_TO, type: NUMERIC }`);
+        if (filters.mileageMin !== undefined) metaArray.push(`{ key: "automilage", value: "${filters.mileageMin}", compare: GREATER_THAN_OR_EQUAL_TO, type: NUMERIC }`);
+        if (filters.mileageMax !== undefined) metaArray.push(`{ key: "automilage", value: "${filters.mileageMax}", compare: LESS_THAN_OR_EQUAL_TO, type: NUMERIC }`);
 
         const metaQuery = metaArray.length > 0 ? `metaQuery: { relation: AND, metaArray: [${metaArray.join(', ')}] }` : '';
 
