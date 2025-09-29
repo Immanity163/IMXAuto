@@ -28,6 +28,30 @@ export interface Car {
   autoaddimage4?: string;
   autoaddimage5?: string;
   autoaddimage6?: string;
+  autoaddimage7?: string;
+  autoaddimage8?: string;
+  autoaddimage9?: string;
+  autoaddimage10?: string;
+  autoaddimage11?: string;
+  autoaddimage12?: string;
+  autoaddimage13?: string;
+  autoaddimage14?: string;
+  autoaddimage15?: string;
+  autoaddimage16?: string;
+  autoaddimage17?: string;
+  autoaddimage18?: string;
+  autoaddimage19?: string;
+  autoaddimage20?: string;
+  autoaddimage21?: string;
+  autoaddimage22?: string;
+  autoaddimage23?: string;
+  autoaddimage24?: string;
+  autoaddimage25?: string;
+  autoaddimage26?: string;
+  autoaddimage27?: string;
+  autoaddimage28?: string;
+  autoaddimage29?: string;
+  autoaddimage30?: string;
   autocompletionfull: string[];
   autoouter?: string;
   autoinner?: string;
@@ -77,6 +101,29 @@ export function useCar(id: string) {
                     autoaddimage4 { node { sourceUrl } }
                     autoaddimage5 { node { sourceUrl } }
                     autoaddimage6 { node { sourceUrl } }
+                    autoaddimage7 { node { sourceUrl } }
+                    autoaddimage8 { node { sourceUrl } }
+                    autoaddimage9 { node { sourceUrl } }
+                    autoaddimage10 { node { sourceUrl } }
+                    autoaddimage11 { node { sourceUrl } }
+                    autoaddimage12 { node { sourceUrl } }
+                    autoaddimage13 { node { sourceUrl } }
+                    autoaddimage14 { node { sourceUrl } }
+                    autoaddimage15 { node { sourceUrl } }
+                    autoaddimage16 { node { sourceUrl } }
+                    autoaddimage17 { node { sourceUrl } }
+                    autoaddimage18 { node { sourceUrl } }
+                    autoaddimage19 { node { sourceUrl } }
+                    autoaddimage20 { node { sourceUrl } }
+                    autoaddimage21 { node { sourceUrl } }
+                    autoaddimage22 { node { sourceUrl } }
+                    autoaddimage23 { node { sourceUrl } }
+                    autoaddimage25 { node { sourceUrl } }
+                    autoaddimage26 { node { sourceUrl } }
+                    autoaddimage27 { node { sourceUrl } }
+                    autoaddimage28 { node { sourceUrl } }
+                    autoaddimage29 { node { sourceUrl } }
+                    autoaddimage30 { node { sourceUrl } }
                     autocompletionfull
                     autoouter { node { sourceUrl } }
                     autoinner { node { sourceUrl } }
@@ -123,6 +170,30 @@ export function useCar(id: string) {
           autoaddimage4: c.autoaddimage4?.node?.sourceUrl ?? "",
           autoaddimage5: c.autoaddimage5?.node?.sourceUrl ?? "",
           autoaddimage6: c.autoaddimage6?.node?.sourceUrl ?? "",
+          autoaddimage7: c.autoaddimage3?.node?.sourceUrl ?? "",
+          autoaddimage8: c.autoaddimage4?.node?.sourceUrl ?? "",
+          autoaddimage9: c.autoaddimage5?.node?.sourceUrl ?? "",
+          autoaddimage10: c.autoaddimage6?.node?.sourceUrl ?? "",
+          autoaddimage11: c.autoaddimage1?.node?.sourceUrl ?? "",
+          autoaddimage12: c.autoaddimage2?.node?.sourceUrl ?? "",
+          autoaddimage13: c.autoaddimage3?.node?.sourceUrl ?? "",
+          autoaddimage14: c.autoaddimage4?.node?.sourceUrl ?? "",
+          autoaddimage15: c.autoaddimage5?.node?.sourceUrl ?? "",
+          autoaddimage16: c.autoaddimage6?.node?.sourceUrl ?? "",
+          autoaddimage17: c.autoaddimage3?.node?.sourceUrl ?? "",
+          autoaddimage18: c.autoaddimage4?.node?.sourceUrl ?? "",
+          autoaddimage19: c.autoaddimage5?.node?.sourceUrl ?? "",
+          autoaddimage20: c.autoaddimage6?.node?.sourceUrl ?? "",
+          autoaddimage21: c.autoaddimage1?.node?.sourceUrl ?? "",
+          autoaddimage22: c.autoaddimage2?.node?.sourceUrl ?? "",
+          autoaddimage23: c.autoaddimage3?.node?.sourceUrl ?? "",
+          autoaddimage24: c.autoaddimage4?.node?.sourceUrl ?? "",
+          autoaddimage25: c.autoaddimage5?.node?.sourceUrl ?? "",
+          autoaddimage26: c.autoaddimage6?.node?.sourceUrl ?? "",
+          autoaddimage27: c.autoaddimage3?.node?.sourceUrl ?? "",
+          autoaddimage28: c.autoaddimage4?.node?.sourceUrl ?? "",
+          autoaddimage29: c.autoaddimage5?.node?.sourceUrl ?? "",
+          autoaddimage30: c.autoaddimage5?.node?.sourceUrl ?? "",
           autocompletionfull: (c.autocompletionfull ?? "")
             .split(/\r?\n/)
             .map((s: string) => s.trim())
