@@ -6,6 +6,7 @@ export interface Car {
   id: string;
   title: string;
   autoEngine: string;
+  shortDesc: string;
   autoFuel: string;
   autoImage: string;
   autoPrice: string;
@@ -82,6 +83,7 @@ export function useCar(id: string) {
                     autoFuel
                     autoImage { node { sourceUrl } }
                     autoPrice
+                    shortDesc
                     autoTitle
                     autoYear
                     autoCountry
@@ -148,6 +150,7 @@ export function useCar(id: string) {
           id: data.id,
           title: data.title,
           autoEngine: c.autoEngine ?? "",
+          shortDesc: c.shortDesc ?? "",
           autoFuel: c.autoFuel ?? "",
           autoImage: c.autoImage?.node?.sourceUrl ?? "",
           autoPrice: c.autoPrice ?? "",
