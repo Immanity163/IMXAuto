@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   keywords: ["купить авто из-за рубежа", "авто под заказ", "IMX AUTO", "автомобили Европа США"],
   authors: [{ name: "студия «Сопряжение»" }],
   creator: "студией «Сопряжение»",
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png', sizes: '512x512' },
+    ],
+  },
   openGraph: {
     type: "website",
     url: "https://imxauto.ru",
